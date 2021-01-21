@@ -20,4 +20,9 @@ spring:
         uri: lb://RATING-SERVICE
         predicates:
         - Path=/rating/**
+      - id: PRODUCT-SERVICE
+        uri: lb://Product-SERVICE
+        predicates:
+        - Path=/product/**
+ 
  
