@@ -16,17 +16,19 @@ public class User {
 	private String lastName;
 	private int departmentId;
 	private int ratingId;
+	private int prodId;
 	
 	public User() {
 		
 	}
-	
-	public User(String firstName, String lastName, int departmentId, int ratingId) {
+
+	public User(String firstName, String lastName, int departmentId, int ratingId, int prodId) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.departmentId = departmentId;
 		this.ratingId = ratingId;
+		this.prodId = prodId;
 	}
 
 	public int getUserId() {
@@ -68,7 +70,13 @@ public class User {
 	public void setRatingId(int ratingId) {
 		this.ratingId = ratingId;
 	}
-	
-	
 
+	public int getProdId() {
+		return prodId;
+	}
+
+	public void setProdId(int prodId) {
+		this.prodId = prodId;
+	}
+	
 }
