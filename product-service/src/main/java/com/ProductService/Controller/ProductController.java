@@ -12,7 +12,7 @@ import com.ProductService.Entity.Product;
 import com.ProductService.Service.ProductService;
 
 @RestController
-@RequestMapping("product")
+@RequestMapping("/product")
 public class ProductController {
 	
 	@Autowired
