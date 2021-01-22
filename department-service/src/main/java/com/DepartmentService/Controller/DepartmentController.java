@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DepartmentService.Entity.Department;
-import com.DepartmentService.Repository.DepartmentRepository;
 import com.DepartmentService.Service.DepartmentService;
 
 @RestController
