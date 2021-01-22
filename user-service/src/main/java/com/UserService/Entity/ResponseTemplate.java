@@ -5,18 +5,16 @@ public class ResponseTemplate {
 	private User user;
 	private Department department;
 	private Rating rating;
-	private Product product;
 
 	public ResponseTemplate() {
 		
 	}
 
-	public ResponseTemplate(User user, Department department, Rating rating, Product product) {
+	public ResponseTemplate(User user, Department department, Rating rating) {
 		super();
 		this.user = user;
 		this.department = department;
 		this.rating = rating;
-		this.product = product;
 	}
 
 	public User getUser() {
@@ -42,14 +40,5 @@ public class ResponseTemplate {
 	public void setRating(Rating rating) {
 		this.rating = rating;
 	}
-
-	public Product getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-
 	
 }

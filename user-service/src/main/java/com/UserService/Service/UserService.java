@@ -6,6 +6,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.UserService.Entity.Department;
 import com.UserService.Entity.Product;
+import com.UserService.Entity.ProductResponse;
 import com.UserService.Entity.Rating;
 import com.UserService.Entity.ResponseTemplate;
 import com.UserService.Entity.User;
@@ -31,15 +32,22 @@ public class UserService {
 		user.getDepartmentId(), Department.class);
 		Rating rating = restTemplate.getForObject("http://RATING-SERVICE/rating/" + 
 		user.getRatingId(), Rating.class);
-		Product product = restTemplate.getForObject("http://PRODUCT-SERVICE/product/" +
-		user.getProdId(), Product.class);
+		
 		rt.setUser(user);
 		rt.setDepartment(department);
 		rt.setRating(rating);
-		rt.setProduct(product);
 		return rt;
 		
-	} 
-	
+	}
+
+	public ProductResponse getUserWithProduct(Integer userId) {
+		ProductResponse rTemp = new ProductResponse();
+		User user = userRepo.findByUserId(userId);
+		Product product = restTemplate.getForObject("http://PRODUCT-SERVICE/product/" +
+				user.getProdId(), Product.class);
+		rTemp.setUser(user);
+		rTemp.setProduct(product);
+		return rTemp;
+	} 	
 
 }
